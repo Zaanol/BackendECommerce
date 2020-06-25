@@ -9,7 +9,7 @@ import java.util.List;
 public class JPAUtil {
 	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("ecommerceQualidade");
 	
-	public EntityManager getEntityManager() {
+	private EntityManager getEntityManager() {
 		return emf.createEntityManager();
 	}
 
@@ -57,11 +57,11 @@ public class JPAUtil {
         return listObj;
     }
 
-    public static void remove(Object obj){
+    public static void remove(Object obj, Integer id){
         EntityManager em = new JPAUtil().getEntityManager();
 
         em.getTransaction().begin();
-        em.remove(obj);
+        em.remove(em.getReference(obj.getClass(), id));
         em.getTransaction().commit();
 
         em.close();
@@ -77,5 +77,28 @@ public class JPAUtil {
         em.getTransaction().commit();
 
         em.close();
+    }
+
+    public static Object update(Object obj){
+        EntityManager em = new JPAUtil().getEntityManager();
+
+        em.getTransaction().begin();
+        em.merge(obj);
+        em.getTransaction().commit();
+
+        em.close();
+
+        return obj;
+    }
+
+    public static List<Object> update(List<Object> listObj){
+        EntityManager em = new JPAUtil().getEntityManager();
+
+        em.getTransaction().begin();
+        em.merge(listObj);
+        em.getTransaction().commit();
+        em.close();
+
+        return listObj;
     }
 }

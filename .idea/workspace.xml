@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca842fdb-c116-4073-b772-9f01159cc5e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/ecommerce/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/ecommerce/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/ecommerce/test/InsertUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/ecommerce/test/ListUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/ecommerce/util/JPAUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+    <list default="true" id="ca842fdb-c116-4073-b772-9f01159cc5e6" name="Default Changelist" comment="Creating user crud rest and changing methods for updating and removing objects">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/ecommerce/model/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/ecommerce/model/SuccessResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/ecommerce/service/ServerInit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackECommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BackECommerce.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/ecommerce/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/ecommerce/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/ecommerce/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/ecommerce/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/ecommerce/test/InsertUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/ecommerce/test/InsertUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/ecommerce/util/JPAUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/ecommerce/util/JPAUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/ecommerce/model/User$Status.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/ecommerce/model/User$Status.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/ecommerce/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/ecommerce/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/ecommerce/test/InsertUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/ecommerce/test/InsertUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/ecommerce/util/JPAUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/ecommerce/util/JPAUtil.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,23 +32,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
   <component name="ProjectId" id="1dhMcZ2sQNKgciVsAH3ybW1Lw5n" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Willian Zanol\Desktop\Engenharia de Software\Qualidade de Software\BackECommerce\src\main\resources\META-INF" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Willian Zanol\Desktop\Engenharia de Software\Qualidade de Software\BackECommerce\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\Willian Zanol\Desktop\Engenharia de Software\Qualidade de Software\BackECommerce\src\main\java\com\backend\ecommerce\util" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Willian Zanol\Desktop\Engenharia de Software\Qualidade de Software\BackECommerce\src\main\resources\META-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -64,7 +70,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ListUser">
+  <component name="RunManager" selected="Application.ServerInit">
     <configuration name="InsertUser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.backend.ecommerce.test.InsertUser" />
       <module name="BackECommerce" />
@@ -91,10 +97,93 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServerInit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.backend.ecommerce.service.ServerInit" />
+      <module name="BackECommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.backend.ecommerce.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.30" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.30" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_backendECommerce" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="61265" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.InsertUser" />
+      <item itemvalue="Application.ListUser" />
+      <item itemvalue="Application.ServerInit" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.30" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ListUser" />
+        <item itemvalue="Application.ServerInit" />
         <item itemvalue="Application.InsertUser" />
+        <item itemvalue="Application.ListUser" />
       </list>
     </recent_temporary>
   </component>
@@ -114,6 +203,10 @@
       <workItem from="1592957318164" duration="1760000" />
       <workItem from="1592959173558" duration="1752000" />
       <workItem from="1592961006438" duration="1750000" />
+      <workItem from="1593030104751" duration="1920000" />
+      <workItem from="1593043449998" duration="1764000" />
+      <workItem from="1593045357107" duration="1768000" />
+      <workItem from="1593047204303" duration="1359000" />
     </task>
     <servers />
   </component>
@@ -132,5 +225,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Creating user crud rest and changing methods for updating and removing objects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating user crud rest and changing methods for updating and removing objects" />
   </component>
 </project>

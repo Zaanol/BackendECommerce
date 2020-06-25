@@ -18,6 +18,9 @@ public class User implements Serializable {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "cpf")
+    private String cpf;
+
     @Column(name = "UF")
     private String UF;
 
@@ -57,9 +60,10 @@ public class User implements Serializable {
 
     public User(){}
 
-    public User(String name, String email, String UF, String city, String neighborhood, String street, String streetNumber, String zipCode, String phone, String password, Status status, Date creationDate, Date updateDate) {
+    public User(String name, String email, String cpf, String UF, String city, String neighborhood, String street, String streetNumber, String zipCode, String phone, String password, Status status, Date creationDate, Date updateDate) {
         this.name = name;
         this.email = email;
+        this.cpf = cpf;
         this.UF = UF;
         this.city = city;
         this.neighborhood = neighborhood;
@@ -95,6 +99,14 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getUF() {

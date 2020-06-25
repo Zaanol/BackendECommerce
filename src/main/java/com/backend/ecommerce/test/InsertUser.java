@@ -10,6 +10,7 @@ public class InsertUser {
         User user = new User();
         user.setName("Willian Zanol");
         user.setEmail("willianzanoll@hotmail.com");
+        user.setCpf("55047852306");
         user.setUF("SC");
         user.setCity("Fraiburgo");
         user.setNeighborhood("Centro");
