@@ -1,15 +1,29 @@
 package com.backend.ecommerce.util;
 
+import com.backend.ecommerce.service.ServerInit;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 
 public class JPAUtil {
-	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("ecommerceQualidade");
-	
-	private EntityManager getEntityManager() {
+	private static EntityManagerFactory emf;
+
+    static {
+        try {
+            Properties prop = ServerInit.getConfig();
+            prop.remove("server.port");
+            emf = Persistence.createEntityManagerFactory("ecommerceQualidade", prop);
+        } catch (IOException e) {
+            System.out.println("[BackendECommerce - ERROR] - Could not create settings file!");
+        }
+    }
+
+    private EntityManager getEntityManager() {
 		return emf.createEntityManager();
 	}
 
