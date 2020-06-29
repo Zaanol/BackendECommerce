@@ -4,6 +4,7 @@ import com.backend.ecommerce.model.ErrorResponse;
 import com.backend.ecommerce.model.SuccessResponse;
 import com.backend.ecommerce.model.User;
 import com.backend.ecommerce.util.JPAUtil;
+import com.backend.ecommerce.util.Util;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -41,6 +42,9 @@ public class UserService {
                 return new ErrorResponse(4, "The ID must not be completed in a creation");
             }
 
+            user.setCreationDate(Util.getCurrentDate());
+            user.setUpdateDate(Util.getCurrentDate());
+
             JPAUtil.persist(user);
             return new SuccessResponse(user.getId(), "User created successfully");
         }catch (Exception e){
@@ -58,6 +62,7 @@ public class UserService {
                 return new ErrorResponse(3, "The ID must be completed in an update");
             }
 
+            user.setUpdateDate(Util.getCurrentDate());
             JPAUtil.update(user);
             return new SuccessResponse(user.getId(), "User updated successfully");
         }catch (Exception e){

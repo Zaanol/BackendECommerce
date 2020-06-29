@@ -63,7 +63,7 @@ public class JPAUtil {
     public static List<Object> getObjects(Class<?> objClass){
         EntityManager em = new JPAUtil().getEntityManager();
 
-        Query q = em.createQuery("SELECT G FROM " + objClass.getCanonicalName() + " G", objClass);
+        Query q = em.createQuery("SELECT G FROM " + objClass.getCanonicalName() + " G ORDER BY G.id", objClass);
         @SuppressWarnings("unchecked")
         List<Object> listObj = q.getResultList();
         em.close();

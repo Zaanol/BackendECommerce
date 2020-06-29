@@ -5,62 +5,29 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "User")
 public class User implements Serializable {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "name")
     private String name;
-
-    @Column(name = "email")
     private String email;
-
-    @Column(name = "cpf")
     private String cpf;
-
-    @Column(name = "UF")
     private String UF;
-
-    @Column(name = "city")
     private String city;
-
-    @Column(name = "neighborhood")
     private String neighborhood;
-
-    @Column(name = "street")
     private String street;
-
-    @Column(name = "streetNumber")
     private String streetNumber;
-
-    @Column(name = "zipCode")
     private String zipCode;
-
-    @Column(name = "phone")
     private String phone;
-
-    @Column(name = "password")
     private String password;
-
-    @Column(name = "status")
+    private String creationDate;
+    private String updateDate;
     private Status status;
-
-    @Column(name = "creationDate")
-    private Date creationDate;
-
-    @Column(name = "updateDate")
-    private Date updateDate;
-
-    public enum Status{
-        INACTIVE, ACTIVE
-    }
 
     public User(){}
 
-    public User(String name, String email, String cpf, String UF, String city, String neighborhood, String street, String streetNumber, String zipCode, String phone, String password, Status status, Date creationDate, Date updateDate) {
+    public User(String name, String email, String cpf, String UF, String city, String neighborhood, String street, String streetNumber, String zipCode, String phone, String password, Status status, String creationDate, String updateDate) {
         this.name = name;
         this.email = email;
         this.cpf = cpf;
@@ -165,24 +132,24 @@ public class User implements Serializable {
         this.phone = phone;
     }
 
-    public Date getCreationDate() {
+    public String getPassword() {
+        return password;
+    }
+
+    public String getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(String creationDate) {
         this.creationDate = creationDate;
     }
 
-    public Date getUpdateDate() {
+    public String getUpdateDate() {
         return updateDate;
     }
 
-    public void setUpdateDate(Date updateDate) {
+    public void setUpdateDate(String updateDate) {
         this.updateDate = updateDate;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     public void setPassword(String password) {
