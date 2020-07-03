@@ -1,15 +1,13 @@
 package com.backend.ecommerce.service;
 
-import com.backend.ecommerce.model.ErrorResponse;
-import com.backend.ecommerce.model.Product;
-import com.backend.ecommerce.model.SuccessResponse;
-import com.backend.ecommerce.model.User;
+import com.backend.ecommerce.model.*;
 import com.backend.ecommerce.util.JPAUtil;
 import com.backend.ecommerce.util.Util;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -53,11 +51,14 @@ public class ProductService {
             Product product = new ObjectMapper().convertValue(mapProduct, Product.class);
             product.setCreationDate(Util.getCurrentDate());
             product.setUpdateDate(Util.getCurrentDate());
-            JPAUtil.persist(product);
 
             if(product.getId() != null){
                 return new ErrorResponse(4, "The ID must not be completed in a creation");
             }
+
+            for(Image obj : product.getImages()) JPAUtil.persist(obj);
+
+            JPAUtil.persist(product);
 
             return new SuccessResponse(product.getId(), "Product created successfully");
         }catch (Exception e){
@@ -86,6 +87,11 @@ public class ProductService {
                 return new ErrorResponse(3, "The ID must be completed in an update");
             }
 
+            for(Image obj : product.getImages()) JPAUtil.update(obj);
+
+            Product actualProduct = (Product) JPAUtil.getObject(Product.class, product.getId());
+            product.setCreationDate(actualProduct.getCreationDate());
+            product.setCreationUser(actualProduct.getCreationUser());
             JPAUtil.update(product);
             return new SuccessResponse(product.getId(), "Product updated successfully");
         }catch (Exception e){

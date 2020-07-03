@@ -39,16 +39,16 @@ public class JPAUtil {
         return obj;
     }
 
-    public static List<Object> persist(List<Object> listObj){
+    public static List<Object> persistList(List<Object> objList){
         EntityManager em = new JPAUtil().getEntityManager();
 
         em.getTransaction().begin();
-        em.persist(listObj);
+        for(Object obj : objList) em.persist(obj);
         em.getTransaction().commit();
 
         em.close();
 
-        return listObj;
+        return objList;
     }
 
     public static Object getObject(Class<?> objClass, Object id){

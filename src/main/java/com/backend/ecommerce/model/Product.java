@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Product implements Serializable {
@@ -24,11 +25,14 @@ public class Product implements Serializable {
     @OneToOne
     private User updateUser;
 
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<Image> images;
+
     private Status status;
 
     public Product(){}
 
-    public Product(String name, String description, BigDecimal price, Float balance, String creationDate, String updateDate, User creationUser, User updateUser, Status status) {
+    public Product(String name, String description, BigDecimal price, Float balance, String creationDate, String updateDate, User creationUser, User updateUser, Status status, List<Image> images) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -38,6 +42,7 @@ public class Product implements Serializable {
         this.creationUser = creationUser;
         this.updateUser = updateUser;
         this.status = status;
+        this.images = images;
     }
 
     public Integer getId() {
@@ -110,6 +115,18 @@ public class Product implements Serializable {
 
     public void setUpdateUser(User updateUser) {
         this.updateUser = updateUser;
+    }
+
+    public List<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Image> images) {
+        this.images = images;
+    }
+
+    public void addImage(Image image){
+        this.images.add(image);
     }
 
     public Status getStatus() {

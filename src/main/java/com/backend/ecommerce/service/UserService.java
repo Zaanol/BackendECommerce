@@ -63,6 +63,8 @@ public class UserService {
             }
 
             user.setUpdateDate(Util.getCurrentDate());
+            User actualUser = (User) JPAUtil.getObject(User.class, user.getId());
+            user.setCreationDate(actualUser.getCreationDate());
             JPAUtil.update(user);
             return new SuccessResponse(user.getId(), "User updated successfully");
         }catch (Exception e){
