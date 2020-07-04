@@ -1,5 +1,6 @@
 package com.backend.ecommerce.service;
 
+import com.backend.ecommerce.util.JPAUtil;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.grizzly2.servlet.GrizzlyWebContainerFactory;
@@ -24,6 +25,7 @@ public class ServerInit {
 
     public static void main(String[] args) throws IOException {
         System.out.println("[BackendECommerce] - Starting server!");
+        new JPAUtil();
         final HttpServer server = startServer();
 
         System.out.println("[BackendECommerce] - Server started successfully - " + BASE_URI);

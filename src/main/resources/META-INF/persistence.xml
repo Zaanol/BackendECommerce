@@ -7,6 +7,7 @@
     <persistence-unit name="ecommerceQualidade" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>com.backend.ecommerce.model.User</class>
+        <class>com.backend.ecommerce.model.Product</class>
         <properties>
             <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver" />
             <property name="hibernate.connection.isolation" value="1" />

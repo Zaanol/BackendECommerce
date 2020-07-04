@@ -3,6 +3,7 @@ package com.backend.ecommerce.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class Product implements Serializable {
     private User updateUser;
 
     @OneToMany(fetch = FetchType.EAGER)
-    private List<Image> images;
+    private List<Image> images = new ArrayList<>();
 
     private Status status;
 
