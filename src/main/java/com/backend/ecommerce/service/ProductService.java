@@ -62,6 +62,7 @@ public class ProductService {
 
             return new SuccessResponse(product.getId(), "Product created successfully");
         }catch (Exception e){
+            e.printStackTrace();
             return new ErrorResponse(2, "Product creation failed");
         }
     }
@@ -95,6 +96,7 @@ public class ProductService {
             JPAUtil.update(product);
             return new SuccessResponse(product.getId(), "Product updated successfully");
         }catch (Exception e){
+            e.printStackTrace();
             return new ErrorResponse(2, "Product update failed");
         }
     }
@@ -115,8 +117,8 @@ public class ProductService {
             return new SuccessResponse(id, "Product successfully removed");
 
         }catch (Exception e){
+            e.printStackTrace();
             return new ErrorResponse(2, "Product remove failed");
         }
-
     }
 }

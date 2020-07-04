@@ -48,6 +48,7 @@ public class UserService {
             JPAUtil.persist(user);
             return new SuccessResponse(user.getId(), "User created successfully");
         }catch (Exception e){
+            e.printStackTrace();
             return new ErrorResponse(2, "User creation failed");
         }
     }
@@ -68,6 +69,7 @@ public class UserService {
             JPAUtil.update(user);
             return new SuccessResponse(user.getId(), "User updated successfully");
         }catch (Exception e){
+            e.printStackTrace();
             return new ErrorResponse(2, "User update failed");
         }
     }
@@ -88,8 +90,8 @@ public class UserService {
             return new SuccessResponse(id, "User successfully removed");
 
         }catch (Exception e){
+            e.printStackTrace();
             return new ErrorResponse(2, "User remove failed");
         }
-
     }
 }
