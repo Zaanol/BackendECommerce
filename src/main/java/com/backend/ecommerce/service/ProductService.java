@@ -25,7 +25,7 @@ public class ProductService {
     @GET
     @Path("/list/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Object getProduct(@PathParam("id") int id){
+    public Object getProduct(@PathParam("id") Integer id){
         Product product = (Product) JPAUtil.getObject(Product.class, id);
         if(product == null){
             return new ErrorResponse(1, "Product not found");
@@ -102,7 +102,7 @@ public class ProductService {
     @DELETE
     @Path("/delete/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Object deleteUser(@PathParam("id") int id){
+    public Object deleteUser(@PathParam("id") Integer id){
         try{
             Product product = (Product) JPAUtil.getObject(Product.class, id);
 

@@ -24,7 +24,7 @@ public class UserService {
     @GET
     @Path("/list/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Object getUser(@PathParam("id") int id){
+    public Object getUser(@PathParam("id") Integer id){
         User user = (User) JPAUtil.getObject(User.class, id);
         if(user == null){
             return new ErrorResponse(1, "User not found");
@@ -75,7 +75,7 @@ public class UserService {
     @DELETE
     @Path("/delete/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Object deleteUser(@PathParam("id") int id){
+    public Object deleteUser(@PathParam("id") Integer id){
         try{
             User user = (User) JPAUtil.getObject(User.class, id);
 
